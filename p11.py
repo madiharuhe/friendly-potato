@@ -4,9 +4,9 @@ from sklearn.datasets import load_iris
 from sklearn.metrics import classification_report, confusion_matrix
 
 X, y = load_iris(return_X_y=True)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3)
 
-y_pred = KNeighborsClassifier(5).fit(X_train, y_train).predict(X_test)
+y_pred = KNeighborsClassifier(5).fit(X_train, Y_train).predict(X_test)
 
 print(confusion_matrix(y_test, y_pred))
 print(classification_report(y_test, y_pred))
